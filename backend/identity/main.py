@@ -23,7 +23,7 @@ MAX_LOGIN_ATTEMPTS = 5
 LOCKOUT_DURATION_SECONDS = 300
 ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "localhost,127.0.0.1,.vercel.app,.onrender.com").split(",")
 
-app = FastAPI(title="Identity Service (Layer 0) — C5ISR IDP")
+app = FastAPI(title="Identity Service (Layer 0) — unabate IDP")
 
 app.add_middleware(
     CORSMiddleware,
@@ -240,8 +240,8 @@ async def totp_qr_code(username: str):
 
     totp = pyotp.TOTP(secret)
     provisioning_uri = totp.provisioning_uri(
-        name=f"{username}@c5isr",
-        issuer_name="C5ISR Zero Trust"
+        name=f"{username}@unabate",
+        issuer_name="unabate"
     )
 
     # Generate QR code image

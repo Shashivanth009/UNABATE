@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 IDENTITY_SERVICE_URL = os.getenv("IDENTITY_SERVICE_URL", "http://identity-service:8000")
 SECRET_KEY = "supersecretkey"
 
-app = FastAPI(title="C5ISR Zero Trust Gateway (Layer 2 PEP)")
+app = FastAPI(title="unabate Zero Trust Gateway (Layer 2 PEP)")
 
 app.add_middleware(
     CORSMiddleware,
@@ -393,4 +393,4 @@ async def websocket_endpoint(websocket: WebSocket):
 
 @app.get("/health")
 async def health():
-    return {"status": "C5ISR GATEWAY OPERATIONAL", "zero_trust": True, "simulation": "INTERNAL"}
+    return {"status": "UNABATE GATEWAY OPERATIONAL", "zero_trust": True, "simulation": "INTERNAL"}

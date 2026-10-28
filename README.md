@@ -1,13 +1,17 @@
 <div align="center">
 
-# 🛡️ C5ISR Zero Trust Platform
+<p align="center">
+  <img src="frontend/public/unabate-logo.png" alt="unabate logo" width="260"/>
+</p>
+
+# unabate
 
 ### Military-Grade Command & Control Dashboard Built on Zero Trust Architecture
 *Real-Time Situational Awareness • Bell-LaPadula MLS • Dynamic TOTP MFA • NIST SP 800-207*
 
 <br/>
 
-[![C5ISR Zero Trust](https://img.shields.io/badge/C5ISR-ZERO%20TRUST-00ff9d?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/Shashivanth009/cztisr)
+[![unabate Zero Trust](https://img.shields.io/badge/unabate-ZERO%20TRUST-00ff9d?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/Shashivanth009/cztisr)
 [![NIST SP 800-207](https://img.shields.io/badge/SECURITY-NIST%20SP%20800--207-00d9f9?style=for-the-badge&logo=security-scorecard&logoColor=black)](https://csrc.nist.gov/publications/detail/sp/800-207/final)
 [![TOTP MFA](https://img.shields.io/badge/AUTH-TOTP%20MFA-ff2a6d?style=for-the-badge&logo=authy&logoColor=white)](https://github.com/Shashivanth009/cztisr)
 [![Docker Orchestration](https://img.shields.io/badge/STACK-DOCKER%20COMPOSE-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/Shashivanth009/cztisr)
@@ -29,7 +33,7 @@
 
 ## 🎯 Executive Summary
 
-The **C5ISR Zero Trust Platform** is a unified command and control (C2) interface integrating **Combat Systems (C5)**, **Intelligence, Surveillance & Reconnaissance (ISR)**, and **Zero Trust Architecture (ZTA)** into a single pane of glass.
+The **unabate** platform is a unified command and control (C2) interface integrating **Combat Systems (C5)**, **Intelligence, Surveillance & Reconnaissance (ISR)**, and **Zero Trust Architecture (ZTA)** into a single pane of glass.
 
 Designed under the **"Never Trust, Always Verify"** standard ([NIST SP 800-207](https://csrc.nist.gov/publications/detail/sp/800-207/final)), every inbound request undergoes 3-stage authentication (Passphrase $\rightarrow$ Contextual Device Trust $\rightarrow$ RFC 6238 TOTP MFA), continuous authorization via Mandatory Access Control (Bell-LaPadula MLS), and immutable audit trail generation.
 
@@ -269,7 +273,7 @@ Test dynamic RBAC tab-locking by logging in with different clearance tiers:
 
 ## 🌐 Production Deployment
 
-- **Backend (Render.com)**: Connect repo to Render Blueprint; it auto-executes `render.yaml` to spin up `c5isr-identity`, `c5isr-gateway`, and `c5isr-postgres`.
+- **Backend (Render.com)**: Connect repo to Render Blueprint; it auto-executes `render.yaml` to spin up `unabate-identity`, `unabate-gateway`, and `unabate-postgres`.
 - **Frontend (Vercel)**: Import `frontend/` directory into Vercel, set `VITE_IDENTITY_URL`, `VITE_GATEWAY_URL`, and `VITE_WS_GATEWAY_URL` environment variables, and deploy.
 
 ---

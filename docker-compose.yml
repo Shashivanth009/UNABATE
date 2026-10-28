@@ -4,30 +4,30 @@ services:
   # --- Data Layer ---
   postgres:
     image: postgres:15-alpine
-    container_name: c5isr-postgres
+    container_name: unabate-postgres
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: securepassword
-      POSTGRES_DB: c5isr_db
+      POSTGRES_DB: unabate_db
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
-      - c5isr-net
+      - unabate-net
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U admin -d c5isr_db" ]
+      test: [ "CMD-SHELL", "pg_isready -U admin -d unabate_db" ]
       interval: 10s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    container_name: c5isr-redis
+    container_name: unabate-redis
     ports:
       - "6379:6379"
     networks:
-      - c5isr-net
+      - unabate-net
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
       interval: 10s
@@ -39,9 +39,9 @@ services:
     build:
       context: ./backend
       dockerfile: identity/Dockerfile
-    container_name: c5isr-identity
+    container_name: unabate-identity
     environment:
-      DATABASE_URL: postgresql://admin:securepassword@postgres:5432/c5isr_db
+      DATABASE_URL: postgresql://admin:securepassword@postgres:5432/unabate_db
       REDIS_URL: redis://redis:6379/0
       SECRET_KEY: supersecretkey
       SMTP_EMAIL: ${SMTP_EMAIL:-}
@@ -54,14 +54,14 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - c5isr-net
+      - unabate-net
 
   # --- Policy Enforcement & Gateway (Layer 2) ---
   gateway-service:
     build:
       context: ./backend
       dockerfile: gateway/Dockerfile
-    container_name: c5isr-gateway
+    container_name: unabate-gateway
     environment:
       IDENTITY_SERVICE_URL: http://identity-service:8000
       REDIS_URL: redis://redis:6379/0
@@ -74,37 +74,37 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - c5isr-net
+      - unabate-net
 
   # --- Cyber Defense & Simulation (Layer 3) ---
   defense-service:
     build:
       context: ./backend
       dockerfile: defense/Dockerfile
-    container_name: c5isr-defense
+    container_name: unabate-defense
     environment:
-      DATABASE_URL: postgresql://admin:securepassword@postgres:5432/c5isr_db
+      DATABASE_URL: postgresql://admin:securepassword@postgres:5432/unabate_db
       REDIS_URL: redis://redis:6379/0
     depends_on:
       gateway-service:
         condition: service_started
     networks:
-      - c5isr-net
+      - unabate-net
 
   simulation-service:
     build:
       context: ./backend
       dockerfile: simulation/Dockerfile
-    container_name: c5isr-simulation
+    container_name: unabate-simulation
     environment:
       GATEWAY_URL: http://gateway-service:8000
     networks:
-      - c5isr-net
+      - unabate-net
 
 volumes:
   postgres_data:
 
 
 networks:
-  c5isr-net:
+  unabate-net:
     driver: bridge
