@@ -142,13 +142,13 @@ export const LoginPage = ({ onLogin }: LoginPageProps) => {
             <div className="glass-panel p-8 rounded-lg w-[460px] relative z-10 border-glow">
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <div className="flex justify-center mb-4">
-                        <div className="p-3 rounded-2xl bg-cyber-neon/5 border border-cyber-neon/30 shadow-[0_0_25px_rgba(0,255,157,0.2)]">
-                            <img src="/unabate-icon-neon.png" alt="unabate logo" className="w-14 h-14 object-contain drop-shadow-[0_0_12px_rgba(0,255,157,0.6)]" />
+                    <div className="flex justify-center mb-3">
+                        <div className="w-14 h-14 border-2 border-cyber-neon rounded-full flex items-center justify-center bg-cyber-neon/10 animate-pulse">
+                            <Shield size={28} className="text-cyber-neon" />
                         </div>
                     </div>
-                    <h1 className="text-2xl font-bold tracking-[0.25em] text-white text-glow lowercase">unabate</h1>
-                    <h2 className="text-xs tracking-[0.4em] text-cyber-neon mt-1 uppercase">Zero Trust Authentication</h2>
+                    <h1 className="text-xl font-bold tracking-[0.3em] text-white text-glow">UNABATE</h1>
+                    <h2 className="text-xs tracking-[0.5em] text-cyber-neon mt-1">ZERO TRUST AUTHENTICATION</h2>
                 </div>
 
                 {/* Step Progress Bar */}

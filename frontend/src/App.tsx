@@ -102,13 +102,8 @@ function App() {
       {/* Sidebar */}
       <div className="w-56 border-r border-cyber-neon/20 bg-black/60 backdrop-blur-sm flex flex-col flex-shrink-0">
         <div className="p-4 border-b border-cyber-neon/20">
-          <div className="flex items-center gap-2.5">
-            <img src="/unabate-icon-neon.png" alt="unabate" className="w-7 h-7 object-contain drop-shadow-[0_0_8px_rgba(0,255,157,0.5)]" />
-            <div>
-              <h1 className="text-lg font-bold tracking-[0.2em] text-glow lowercase">unabate</h1>
-              <div className="text-[9px] tracking-[0.3em] text-cyber-neon/80">ZERO TRUST</div>
-            </div>
-          </div>
+          <h1 className="text-lg font-bold tracking-[0.25em] text-glow">UNABATE</h1>
+          <div className="text-[10px] tracking-[0.4em] text-cyber-neon/80">ZERO TRUST</div>
           <div className="mt-2 text-[10px] text-cyber-blue animate-pulse">● SYSTEM SECURE</div>
         </div>
 
