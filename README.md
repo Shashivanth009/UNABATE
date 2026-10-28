@@ -7,10 +7,10 @@
 
 <br/>
 
-[![UNABATE Zero Trust](https://img.shields.io/badge/UNABATE-ZERO%20TRUST-00ff9d?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/Shashivanth009/cztisr)
+[![UNABATE Zero Trust](https://img.shields.io/badge/UNABATE-ZERO%20TRUST-00ff9d?style=for-the-badge&logo=shield&logoColor=black)](https://github.com/Shashivanth009/UNABATE)
 [![NIST SP 800-207](https://img.shields.io/badge/SECURITY-NIST%20SP%20800--207-00d9f9?style=for-the-badge&logo=security-scorecard&logoColor=black)](https://csrc.nist.gov/publications/detail/sp/800-207/final)
-[![TOTP MFA](https://img.shields.io/badge/AUTH-TOTP%20MFA-ff2a6d?style=for-the-badge&logo=authy&logoColor=white)](https://github.com/Shashivanth009/cztisr)
-[![Docker Orchestration](https://img.shields.io/badge/STACK-DOCKER%20COMPOSE-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/Shashivanth009/cztisr)
+[![TOTP MFA](https://img.shields.io/badge/AUTH-TOTP%20MFA-ff2a6d?style=for-the-badge&logo=authy&logoColor=white)](https://github.com/Shashivanth009/UNABATE)
+[![Docker Orchestration](https://img.shields.io/badge/STACK-DOCKER%20COMPOSE-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/Shashivanth009/UNABATE)
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square&logo=react" alt="React 19"/>
@@ -197,8 +197,8 @@ Access permissions strictly follow **Bell-LaPadula Mandatory Access Control (No 
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/Shashivanth009/cztisr.git
-cd cztisr/unabate
+git clone https://github.com/Shashivanth009/UNABATE.git
+cd UNABATE
 
 # 2. Launch 6-container stack
 docker-compose up --build
